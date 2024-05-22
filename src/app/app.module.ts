@@ -8,16 +8,17 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
-import { authGuard } from './_auth/auth.guard';
 import { AuthInterceptor } from './_auth/auth.interceptor';
 import { LoginService } from './_service/login.service';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,

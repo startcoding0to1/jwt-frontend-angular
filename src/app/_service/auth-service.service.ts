@@ -25,6 +25,24 @@ export class AuthServiceService {
     return token;
   }
 
+  public setFirstName(firstName:string):void{
+    localStorage.setItem("firstName",firstName)
+  }
+
+  public getFirstName():string | null{
+    let firstName=localStorage.getItem("firstName")
+    return firstName;
+  }
+
+  public setLastName(lastName:string):void{
+    localStorage.setItem("lastName",lastName)
+  }
+
+  public getLastName():string | null{
+    let lastName=localStorage.getItem("lastName")
+    return lastName;
+  }
+
   public clear(){
     localStorage.clear();
   }

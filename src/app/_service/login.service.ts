@@ -15,7 +15,7 @@ export class LoginService {
   ){}
 
   login(loginFormData:any):Observable<any>{
-    console.log("Coming"+loginFormData.value);
+    console.log("Login data: "+loginFormData.value);
     return this.http.post(this.url + "auth/authenticate", loginFormData, {headers:this.headers});
   }
 

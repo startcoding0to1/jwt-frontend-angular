@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { HomeComponent } from './home/home.component';
 import { authGuard } from './_auth/auth.guard';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
@@ -16,7 +17,11 @@ const routes: Routes = [
     component:LoginComponent
   },
   {
-    path:'dashBoard/:role',
+    path:'register',
+    component:UserComponent
+  },
+  {
+    path:'dashboard/:role',
     component:DashboardComponent,
     canActivate:[authGuard],data:{roles:['Admin','User']}
   },

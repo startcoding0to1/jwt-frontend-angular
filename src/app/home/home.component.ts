@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AuthServiceService } from '../_service/auth-service.service';
 import { Router } from '@angular/router';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +22,5 @@ export class HomeComponent{
     this.authServiceService.clear();
     this.router.navigate(['/login']);
   }
-
 
 }

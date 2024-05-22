@@ -1,27 +1,29 @@
 import { Component } from '@angular/core';
-import { LoginService } from '../_service/login.service';
 import { NgForm } from '@angular/forms';
 import { AuthServiceService } from '../_service/auth-service.service';
 import { Router } from '@angular/router';
+import { RegisterService } from '../_service/Register.service';
 
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrl: './user.component.css'
 })
-export class LoginComponent {
-  loginForm:any;
-  userName!:string;
-  userPassword!:string;
+export class UserComponent {
+  // registerForm:any;
+  // userName!:string;
+  // firstName!:string;
+  // lastName!:string;
+  // userPassword!:string;
 
-  constructor(private loginService:LoginService,
+  constructor(private registerService:RegisterService,
     private authService:AuthServiceService,
     private router:Router
   ){}
 
-  login(loginForm:NgForm){
-    this.loginService.login(loginForm.value).subscribe({
+  register(registerForm:NgForm){
+    this.registerService.register(registerForm.value).subscribe({
       next:(response:any)=>{
         console.log(response)
         console.log("Roles: ",response.user.authorities);
